@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuzen's - Akıllı Saç Analizi Sistemi | Smile Hair Clinic</title>
+    <meta name="description" content="Sensör tabanlı otomatik self-capture sistemi ile saç ekimi değerlendirmelerini standartlaştırın.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 pointer-events-none transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center h-16">
+                <a href="#hero" id="navbar-logo" class="text-2xl font-bold text-white hover:opacity-80 transition cursor-pointer pointer-events-auto">Kuzen's</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center gradient-bg text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                Akıllı Saç Analizi<br/>Sistemi
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+                Sensör tabanlı otomatik self-capture sistemi ile saç ekimi değerlendirmelerini standartlaştırın
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#problem" class="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition transform hover:scale-105">
+                    Keşfet
+                </a>
+                <a href="#cozum" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition">
+                    Çözümü Gör
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="fullscreen-section bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <div data-aos="fade-right" class="flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Saç Ekiminde<br/>En Büyük Problem
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Kullanıcılar telefonlarıyla doğru açılarda fotoğraf çekemiyor. Özellikle <strong>tepe (vertex)</strong> ve <strong>arka donör</strong> açıları hem fiziksel olarak zor hem de standart dışı çekimlere neden oluyor.
+                    </p>
+                    <div class="space-y-3 mt-6">
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-3">✗</span>
+                            <span class="text-gray-700">Klinik doğru teşhis koyamıyor</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-3">✗</span>
+                            <span class="text-gray-700">Kullanıcı defalarca fotoğraf çekmek zorunda kalıyor</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-500 mr-3">✗</span>
+                            <span class="text-gray-700">Zaman, emek ve motivasyon kaybı oluşuyor</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="image-wrapper">
+                    <div class="image-slider" data-slider="problem">
+                        <div class="image-container">
+                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Problem+1" alt="Problem 1" class="slider-image active">
+                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Problem+2" alt="Problem 2" class="slider-image">
+                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Problem+3" alt="Problem 3" class="slider-image">
+                        </div>
+                        <div class="slider-dots">
+                            <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                            <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                            <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="cozum" class="fullscreen-section bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Çözümümüz
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Kullanıcıyı profesyonel bir fotoğrafçı gibi yönlendiren otomatik bir self-capture sistemi
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <div data-aos="fade-right" class="order-2 md:order-1 image-wrapper">
+                    <div class="image-slider" data-slider="solution">
+                        <div class="image-container">
+                            <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=Solution+1" alt="Solution 1" class="slider-image active">
+                            <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=Solution+2" alt="Solution 2" class="slider-image">
+                            <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=Solution+3" alt="Solution 3" class="slider-image">
+                        </div>
+                        <div class="slider-dots">
+                            <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                            <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                            <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="order-1 md:order-2 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                        5 Açı, Otomatik Çekim
+                    </h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-2xl">✓</span>
+                            <span>Ön yüz tam karşıdan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-2xl">✓</span>
+                            <span>45° sağ profil</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-2xl">✓</span>
+                            <span>45° sol profil</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-2xl">✓</span>
+                            <span>Tepe (Vertex)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-2xl">✓</span>
+                            <span>Arka Donör</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 p-6 bg-blue-50 rounded-lg">
+                        <p class="text-2xl font-bold text-blue-600 mb-2">%98</p>
+                        <p class="text-gray-700">Doğruluk Oranı</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="fullscreen-section bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Teknoloji
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Sensör tabanlı akıllı kılavuzlama sistemi - Core Technology
+                </p>
+            </div>
+            
+            <!-- Sensör Detayları -->
+            <div class="mb-16" data-aos="fade-up">
+                <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Sensör Tabanlı Akıllı Kılavuzlama Sistemi</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3">Kullanılan Sensörler</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span><strong>Accelerometer:</strong> Telefonun yerçekimine göre eğimini belirler</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span><strong>Gyroscope:</strong> Telefonun dönüş hızını ve hareketini ölçer</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 text-gray-600">
+                                Bu iki veri, <strong>100ms'de bir</strong> okunarak telefonun <strong>Pitch, Roll ve Yaw</strong> değerlerine dönüştürülür.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3">Gürültü Filtreleme – Stabilizasyon Motoru</h4>
+                            <p class="text-gray-700 mb-3">Sensör verileri ham haliyle titrek ve kararsızdır. Bu yüzden:</p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    <span><strong>5 frame'lik</strong> hareketli ortalama</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    <span><strong>Normalize edilmiş</strong> veri</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    <span><strong>Noise filtering</strong></span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 text-gray-600">ile çok stabil bir açı hesabı elde ediyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Açı Algoritmaları -->
+            <div class="mb-16" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Adım Bazlı Açı Algoritmaları</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white border-2 border-blue-100 p-6 rounded-xl">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">1, 2 ve 3. Adımlar: Ön, Sağ 45°, Sol 45°</h4>
+                        <p class="text-gray-700 mb-3">Telefonun yere paralel olup olmadığını anlamak için:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• <strong>Pitch:</strong> -90 ile -80 arasında</li>
+                            <li>• <strong>Roll:</strong> ±15°</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white border-2 border-teal-100 p-6 rounded-xl">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">4. Adım: Tepe Çekimi</h4>
+                        <p class="text-gray-700 mb-3 text-sm">Android ve iOS sensörleri farklı çalıştığı için her platform için ayrı açı denklemi:</p>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <strong class="text-gray-900">Android:</strong>
+                                <ul class="text-gray-600 mt-1 ml-4">
+                                    <li>• z ≥ 0.55 → Telefon yüz aşağı</li>
+                                    <li>• Roll → ±30°</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">iOS:</strong>
+                                <ul class="text-gray-600 mt-1 ml-4">
+                                    <li>• z pozitif → telefon başın üzerinde</li>
+                                    <li>• Pitch: -55 ile -25 arasında</li>
+                                    <li>• Roll: ±20°</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border-2 border-purple-100 p-6 rounded-xl md:col-span-2">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">5. Adım: Arka Donör</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <strong class="text-gray-900">Android:</strong>
+                                <ul class="text-gray-600 mt-2 text-sm">
+                                    <li>• z ≥ 0.6</li>
+                                    <li>• Roll: ±35°</li>
+                                    <li>• Pitch: -100 ile 45°</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">iOS:</strong>
+                                <ul class="text-gray-600 mt-2 text-sm">
+                                    <li>• Pitch: ±20°</li>
+                                    <li>• z pozitif</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Highlights -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="0" class="bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Sensör Motoru</h4>
+                    <p class="text-gray-600">Accelerometer ve gyroscope verilerini 100ms'de bir okuyarak pitch, roll ve yaw değerlerine dönüştürüyoruz.</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">AI Doğrulama</h4>
+                    <p class="text-gray-600">Her fotoğraf <strong>fal-ai/llava-next</strong> modeli ile doğrulanıyor. "Bu fotoğraf vertex açısı mı?" gibi sorularla hatalı fotoğraf oranını <strong>%80 azaltıyoruz</strong>.</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">UX Motoru</h4>
+                    <p class="text-gray-600">Renk kılavuzu (Kırmızı/Sarı/Yeşil), sesli talimatlar, titreşim geribildirimi ve otomatik çekim ile kullanıcıyı yönlendiriyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UX Engine Details Section -->
+    <section class="fullscreen-section bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Kullanıcıya Verilen Geribildirimler
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Sezgisel bir kullanıcı deneyimi ile desteklenen sistem
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-right" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-8 h-8 bg-red-500 rounded"></div>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-semibold text-gray-900">Renk Kılavuzu: Dynamic Overlay</h4>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Gerçek zamanlı ekran kaplaması:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 bg-red-500 rounded mr-3"></span>
+                            <span><strong>Kırmızı:</strong> Yanlış açı</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 bg-yellow-500 rounded mr-3"></span>
+                            <span><strong>Sarı:</strong> Yaklaşıyorsun</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 bg-green-500 rounded mr-3"></span>
+                            <span><strong>Yeşil:</strong> Tam açı</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-4">Reanimated ile interpolation kullanarak animasyonlu şekilde sağladık.</p>
+                </div>
+                
+                <div data-aos="fade-left" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 text-blue-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path>
+                        </svg>
+                        <h4 class="text-lg font-semibold text-gray-900">Sesli Talimatlar</h4>
+                    </div>
+                    <p class="text-gray-700 mb-4">Her adımda otomatik oynar:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• "Telefona tam karşıdan bakın"</li>
+                        <li>• "Başınızı sağa çevirin"</li>
+                        <li>• "Hazır, lütfen sabit durun"</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-4">20 farklı dilde destek eklenmiştir.</p>
+                </div>
+                
+                <div data-aos="fade-right" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 text-purple-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        <h4 class="text-lg font-semibold text-gray-900">Haptics (Titreşim)</h4>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Açı doğru olunca</li>
+                        <li>• Geri sayımda her saniye</li>
+                        <li>• Fotoğraf çekiminde</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-4">Kullanıcı telefonu hissetmeye başlar.</p>
+                </div>
+                
+                <div data-aos="fade-left" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 text-green-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <h4 class="text-lg font-semibold text-gray-900">Otomatik Çekim</h4>
+                    </div>
+                    <p class="text-gray-700 mb-4">Açı "iyi" olduğunda:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• 1 saniyelik stabilizasyon süresi</li>
+                        <li>• 3-2-1 geri sayım</li>
+                        <li>• Otomatik shutter</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-4">Kullanıcı ekrana dokunmadan tüm fotoğraflar otomatik olarak çekilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="ozellikler" class="bg-gradient-to-br from-blue-50 to-teal-50">
+        <!-- Feature 1: Generative AI -->
+        <section class="fullscreen-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                    <div data-aos="fade-right" class="flex flex-col justify-center">
+                        <div class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                            Generative AI
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                            Saç Ekimi Sonrası Tahmini Fotoğraflar
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Kullanıcının 3 açıdaki fotoğrafını alıp 1 hafta, 1 ay ve 1 yıl sonrası tahmini görünüm görüntülerini üretiyoruz. Bu özellik kullanıcı motivasyonunu dramatik şekilde artırıyor.
+                        </p>
+                        <div class="flex gap-4">
+                            <div class="flex-1 bg-white p-4 rounded-lg shadow">
+                                <p class="text-sm text-gray-500">1 Hafta</p>
+                                <p class="text-xl font-bold text-gray-900">Sonrası</p>
+                            </div>
+                            <div class="flex-1 bg-white p-4 rounded-lg shadow">
+                                <p class="text-sm text-gray-500">1 Ay</p>
+                                <p class="text-xl font-bold text-gray-900">Sonrası</p>
+                            </div>
+                            <div class="flex-1 bg-white p-4 rounded-lg shadow">
+                                <p class="text-sm text-gray-500">1 Yıl</p>
+                                <p class="text-xl font-bold text-gray-900">Sonrası</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="image-wrapper">
+                        <div class="image-slider" data-slider="generative-ai">
+                            <div class="image-container">
+                                <img src="https://placehold.co/1080x1920/3b82f6/ffffff?text=Generative+AI+1" alt="Generative AI 1" class="slider-image active">
+                                <img src="https://placehold.co/1080x1920/3b82f6/ffffff?text=Generative+AI+2" alt="Generative AI 2" class="slider-image">
+                                <img src="https://placehold.co/1080x1920/3b82f6/ffffff?text=Generative+AI+3" alt="Generative AI 3" class="slider-image">
+                            </div>
+                            <div class="slider-dots">
+                                <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                                <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 2: AI Chatbot -->
+        <section class="fullscreen-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                    <div data-aos="fade-right" class="order-2 md:order-1 image-wrapper">
+                        <div class="image-slider" data-slider="chatbot">
+                            <div class="image-container">
+                                <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=AI+Chatbot+1" alt="AI Chatbot 1" class="slider-image active">
+                                <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=AI+Chatbot+2" alt="AI Chatbot 2" class="slider-image">
+                                <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=AI+Chatbot+3" alt="AI Chatbot 3" class="slider-image">
+                            </div>
+                            <div class="slider-dots">
+                                <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                                <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="order-1 md:order-2 flex flex-col justify-center">
+                        <div class="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4">
+                            AI Chatbot
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                            Klinik İçerikleriyle Eğitilmiş
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Tüm Smile Hair Clinic içeriklerini işlemiş özel bir bilgi motoru. Kullanıcı "Saç ekiminden kaç gün sonra duş alabilirim?" diye sorduğunda doğrudan doğru yanıt veriyor.
+                        </p>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <p class="text-gray-700 italic mb-2">"Saç ekimi sonrası banyo yapabilir miyim?"</p>
+                            <div class="flex items-center text-teal-600">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                <span class="font-semibold">Anında Yanıt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 3: To-Do List -->
+        <section class="fullscreen-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                    <div data-aos="fade-right" class="flex flex-col justify-center">
+                        <div class="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+                            To-Do List
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                            Saç Ekimi Öncesi & Sonrası Yol Haritası
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Operasyon öncesi ve sonrası görevler: Sigara bırakma süresi, operasyon hazırlığı, yıkama talimatları, bakım adımları. Kişisel bir yol haritası gibi çalışıyor.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                                <div class="w-6 h-6 border-2 border-gray-300 rounded mr-4"></div>
+                                <span class="text-gray-700">Sigara bırakma süresi</span>
+                            </div>
+                            <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                                <div class="w-6 h-6 border-2 border-gray-300 rounded mr-4"></div>
+                                <span class="text-gray-700">Operasyon hazırlığı</span>
+                            </div>
+                            <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                                <div class="w-6 h-6 border-2 border-gray-300 rounded mr-4"></div>
+                                <span class="text-gray-700">Yıkama talimatları</span>
+                            </div>
+                            <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                                <div class="w-6 h-6 border-2 border-gray-300 rounded mr-4"></div>
+                                <span class="text-gray-700">Bakım adımları</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="image-wrapper">
+                        <div class="image-slider" data-slider="todo">
+                            <div class="image-container">
+                                <img src="https://placehold.co/1080x1920/8b5cf6/ffffff?text=To-Do+List+1" alt="To-Do List 1" class="slider-image active">
+                                <img src="https://placehold.co/1080x1920/8b5cf6/ffffff?text=To-Do+List+2" alt="To-Do List 2" class="slider-image">
+                                <img src="https://placehold.co/1080x1920/8b5cf6/ffffff?text=To-Do+List+3" alt="To-Do List 3" class="slider-image">
+                            </div>
+                            <div class="slider-dots">
+                                <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                                <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Global Section -->
+    <section class="fullscreen-section bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <div data-aos="fade-right" class="flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        20 Dilli<br/>Global Sistem
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Saç ekimi turizmini analiz edip en çok hasta gönderen 20 ülkeyi seçtik. Hem arayüz hem de sesli talimat sistemi 20 dilde çalışacak şekilde kurgulandı.
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                        <p class="text-3xl font-bold text-blue-600 mb-2">%92</p>
+                        <p class="text-gray-700">Dünya saç ekimi müşterilerinin kapsama oranı</p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Desteklenen Diller:</h4>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Türkçe, İngilizce, Arapça, Almanca, Fransızca, İspanyolca, İtalyanca, Hollandaca, Rusça, Portekizce, Farsça, Romence, Azerice, Çince (Mandarin), Hintçe, Korece, Japonca, İsveççe, Danca, Norveççe
+                        </p>
+                        <div class="bg-teal-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>RTL Desteği:</strong> Arapça ve Farsça için sağdan sola yazım desteği eklendi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Neden Önemli?</strong> Türkiye saç ekimi turizmi yılda yüzbinlerce uluslararası müşteri çekiyor. Kullanıcılar uygulamayı kendi dilinde kullanınca çekim doğruluğu ve tamamlama oranı dramatik şekilde yükseliyor.
+                        </p>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="image-wrapper">
+                    <div class="image-slider" data-slider="global">
+                        <div class="image-container">
+                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Global+1" alt="Global 1" class="slider-image active">
+                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Global+2" alt="Global 2" class="slider-image">
+                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Global+3" alt="Global 3" class="slider-image">
+                        </div>
+                        <div class="slider-dots">
+                            <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                            <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                            <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Value Section - Part 1: Stats -->
+    <section id="ticari" class="fullscreen-section bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="400">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Ticari Değer & ROI
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Smile Hair Clinic için özel olarak tasarlanmış lead toplama ve dönüşüm sistemi
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+                <div data-aos="fade-up" class="bg-gray-800 p-8 md:p-12 rounded-xl text-center min-h-[250px] flex flex-col justify-center">
+                    <div class="stat-number text-white mb-4">3x</div>
+                    <p class="text-gray-300 text-xl font-semibold mb-3">Daha Fazla Lead</p>
+                    <p class="text-gray-400">Normal web formlarına göre</p>
+                </div>
+                
+                <div data-aos="fade-up" class="bg-gray-800 p-8 md:p-12 rounded-xl text-center min-h-[250px] flex flex-col justify-center">
+                    <div class="stat-number text-white mb-4">%40</div>
+                    <p class="text-gray-300 text-xl font-semibold mb-3">Daha Yüksek Randevu</p>
+                    <p class="text-gray-400">Dönüşüm oranı</p>
+                </div>
+                
+                <div data-aos="fade-up" class="bg-gray-800 p-8 md:p-12 rounded-xl text-center min-h-[250px] flex flex-col justify-center">
+                    <div class="stat-number text-white mb-4">%70</div>
+                    <p class="text-gray-300 text-xl font-semibold mb-3">Daha Düşük Vazgeçme</p>
+                    <p class="text-gray-400">Drop-off oranı</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Value Section - Part 2: Details -->
+    <section class="fullscreen-section bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
+                <div data-aos="fade-right" data-aos-duration="400">
+                    <h3 class="text-4xl font-bold mb-8">Lead Toplama Motoru</h3>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Tüm çekimler sonunda kullanıcı tahmini görüntüleri görmek için telefon numarasını gönüllü olarak veriyor. Numara direkt olarak Smile Hair Clinic CRM'ine gidiyor.
+                    </p>
+                    <div class="space-y-5">
+                        <div class="flex items-start text-gray-300">
+                            <svg class="w-7 h-7 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-lg">Kullanıcı hâlihazırda etkileşime girmiş → sıcak lead</span>
+                        </div>
+                        <div class="flex items-start text-gray-300">
+                            <svg class="w-7 h-7 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-lg">Klinik kullanıcıya anında ulaşabiliyor</span>
+                        </div>
+                        <div class="flex items-start text-gray-300">
+                            <svg class="w-7 h-7 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-lg">Lead → 5 dakika içinde randevu teklifine dönüşebilir</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-gray-800 p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-4">CRM Entegrasyonu → Daha Hızlı Satış Süreci</h4>
+                        <p class="text-gray-300 mb-4">Toplanan numara otomatik olarak veritabanına işleniyor. İlerideki süreçlerde bu numaraları direkt olarak bir CRM programında toplamayı hedefliyoruz.</p>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Potansiyel hastayı anında arayabilir</li>
+                            <li>• Doğru açılı fotoğraflara sahip olduğu için doktor hızlı değerlendirme yapar</li>
+                            <li>• Kullanıcıyla ilk temas çok daha güçlü olur</li>
+                            <li>• Satış ekibi daha az kayıp yaşar</li>
+                        </ul>
+                        <p class="text-gray-400 mt-4 text-sm italic">Bu hız saç ekimi turizinde dev bir avantajdır.</p>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="400">
+                    <div class="bg-gray-800 p-10 rounded-xl">
+                        <h4 class="text-3xl font-bold mb-8">ROI Analizi</h4>
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center pb-5 border-b border-gray-700">
+                                <span class="text-gray-300 text-lg">Ortalama kullanıcı maliyeti</span>
+                                <span class="text-2xl font-bold text-white">$0.14</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-5 border-b border-gray-700">
+                                <span class="text-gray-300 text-lg">Ortalama lead değeri</span>
+                                <span class="text-2xl font-bold text-white">$2,780-3,810</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-5">
+                                <span class="text-xl font-semibold text-white">ROI</span>
+                                <span class="text-3xl font-bold text-green-400">17.5× - 254×</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mt-8 leading-relaxed text-sm">
+                            Dönüşüm senaryolarına göre: Düşük (0.1%) → 17.5×, Orta (0.3%) → 56×, Yüksek (1%) → 185×
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Details Section -->
+    <section class="fullscreen-section bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Maliyet Analizi
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    AI + Operasyon + Teknik Altyapı maliyetleri
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div data-aos="fade-up" class="bg-gray-700 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6">AI Maliyetleri</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-400 pl-4">
+                            <h4 class="font-semibold mb-2">Görüntü Analizi (LLaVA / fal-ai)</h4>
+                            <p class="text-gray-300 text-sm mb-1">0.003 USD / fotoğraf</p>
+                            <p class="text-gray-400 text-xs">5 fotoğraf doğrulaması: 0.015 USD</p>
+                        </div>
+                        <div class="border-l-4 border-teal-400 pl-4">
+                            <h4 class="font-semibold mb-2">Generative AI Tahmini</h4>
+                            <p class="text-gray-300 text-sm mb-1">0.032 USD / görsel</p>
+                            <p class="text-gray-400 text-xs">3 tahmini görüntü: 0.096 USD</p>
+                        </div>
+                        <div class="border-l-4 border-purple-400 pl-4">
+                            <h4 class="font-semibold mb-2">AI Chatbot (gpt-4o)</h4>
+                            <p class="text-gray-300 text-sm mb-1">0.004 USD / soru</p>
+                            <p class="text-gray-400 text-xs">Ortalama 5 soru: 0.02 USD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" class="bg-gray-700 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6">Teknik Altyapı</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-400 pl-4">
+                            <h4 class="font-semibold mb-2">Depolama</h4>
+                            <p class="text-gray-300 text-sm mb-1">10 MB / kullanıcı</p>
+                            <p class="text-gray-400 text-xs">Google Cloud Storage: 0.02 USD / GB / ay</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-400 pl-4">
+                            <h4 class="font-semibold mb-2">Backend / Sunucu</h4>
+                            <p class="text-gray-300 text-sm mb-1">~20 USD / ay</p>
+                            <p class="text-gray-400 text-xs">API, loglama, kullanıcı yönetimi</p>
+                        </div>
+                        <div class="border-l-4 border-red-400 pl-4">
+                            <h4 class="font-semibold mb-2">Dil Çevirileri</h4>
+                            <p class="text-gray-300 text-sm mb-1">5-10 USD (tek seferlik)</p>
+                            <p class="text-gray-400 text-xs">20 dil için AI çeviri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Table -->
+            <div data-aos="fade-up" class="bg-gray-700 p-8 rounded-xl max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">Kullanıcı Başına Toplam Maliyet</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-gray-600">
+                                <th class="pb-3 text-gray-300">Kalem</th>
+                                <th class="pb-3 text-gray-300 text-right">Maliyet</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-200">
+                            <tr class="border-b border-gray-600">
+                                <td class="py-3">AI Fotoğraf Doğrulama</td>
+                                <td class="py-3 text-right font-semibold">0.015 USD</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="py-3">Generative AI Tahmini</td>
+                                <td class="py-3 text-right font-semibold">0.096 USD</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="py-3">AI Chatbot</td>
+                                <td class="py-3 text-right font-semibold">0.023 USD</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="py-3">Depolama + Backend</td>
+                                <td class="py-3 text-right font-semibold">~0.01 USD</td>
+                            </tr>
+                            <tr class="bg-gray-600">
+                                <td class="py-4 font-bold text-lg">Toplam</td>
+                                <td class="py-4 text-right font-bold text-xl text-green-400">0.14 USD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Scenarios Section -->
+    <section class="fullscreen-section bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    ROI Senaryoları
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Farklı dönüşüm oranlarına göre kazanç analizi
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div data-aos="fade-up" class="bg-gray-800 p-8 rounded-xl">
+                    <div class="text-center mb-6">
+                        <div class="inline-block px-4 py-2 bg-red-500/20 text-red-400 rounded-full text-sm font-semibold mb-4">
+                            Düşük Dönüşüm
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">0.1% (her 1000 kişide 1 müşteri)</p>
+                        <div class="text-4xl font-bold text-white mb-2">17.5× - 24.4×</div>
+                        <p class="text-gray-400 text-sm">ROI</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Müşteri edinme maliyeti:</span>
+                            <span class="text-white font-semibold">150 USD</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Gelir / 1 USD maliyet:</span>
+                            <span class="text-green-400 font-semibold">17.5-24.4 USD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-800 p-8 rounded-xl border-2 border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold mb-4">
+                            Orta Dönüşüm
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">0.3% (her 333 kişide 1 müşteri)</p>
+                        <div class="text-4xl font-bold text-white mb-2">56× - 76×</div>
+                        <p class="text-gray-400 text-sm">ROI</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Müşteri edinme maliyeti:</span>
+                            <span class="text-white font-semibold">49.5 USD</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Gelir / 1 USD maliyet:</span>
+                            <span class="text-green-400 font-semibold">56-76 USD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-gray-800 p-8 rounded-xl">
+                    <div class="text-center mb-6">
+                        <div class="inline-block px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold mb-4">
+                            Yüksek Dönüşüm
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">1% (her 100 kişide 1 müşteri)</p>
+                        <div class="text-4xl font-bold text-white mb-2">185× - 254×</div>
+                        <p class="text-gray-400 text-sm">ROI</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Müşteri edinme maliyeti:</span>
+                            <span class="text-white font-semibold">15 USD</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Gelir / 1 USD maliyet:</span>
+                            <span class="text-green-400 font-semibold">185-254 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Model Section -->
+    <section class="fullscreen-section bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Growth Modeli
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Klinik içinde nasıl ölçeklenecek?
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-up" class="bg-blue-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">1. Medical Growth</h3>
+                    <p class="text-gray-700 mb-4">Klinik değerlendirme sürecini standartlaştırır:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Doktorun değerlendirme doğruluğu artar</li>
+                        <li>• Greft sayısı daha doğru hesaplanır</li>
+                        <li>• Operasyon planlama süreci hızlanır</li>
+                        <li>• Klinik içi kalite standardı yükselir</li>
+                    </ul>
+                </div>
+
+                <div data-aos="fade-up" class="bg-teal-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">2. Marketing Growth</h3>
+                    <p class="text-gray-700 mb-4">Lead kalitesini artırır:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Daha yüksek niyet seviyesi</li>
+                        <li>• Lead toplama oranı artar</li>
+                        <li>• Reklam dönüşüm maliyeti düşer</li>
+                        <li>• Etkileşimli funnel oluşturur</li>
+                    </ul>
+                </div>
+
+                <div data-aos="fade-up" class="bg-purple-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">3. Operational Growth</h3>
+                    <p class="text-gray-700 mb-4">Süreç otomasyonu ile verimlilik:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Satış ekibinin iş yükü azalır</li>
+                        <li>• Daha hızlı geri dönüş</li>
+                        <li>• Fotoğraflar önceden hazır</li>
+                        <li>• Değer sunan cümlelerle dönüş</li>
+                    </ul>
+                </div>
+
+                <div data-aos="fade-up" class="bg-green-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">4. Global Growth</h3>
+                    <p class="text-gray-700 mb-4">Yabancı hastalarda dil engeli ortadan kalkar:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• 20 dil desteği (arayüz + ses)</li>
+                        <li>• Daha fazla lead</li>
+                        <li>• Daha yüksek tamamlama oranı</li>
+                        <li>• Daha yüksek dönüşüm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" class="mt-8 bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">5. Platform Growth</h3>
+                <p class="text-gray-700 mb-4">Gelecekte eklenebilecek modüller:</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Saç çizgisi otomatik analizi</li>
+                        <li>• Donör kapasitesi AI tahmini</li>
+                        <li>• Önce/sonra karşılaştırma motoru</li>
+                    </ul>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• 6 ay – 1 yıl takip fotoğrafları</li>
+                        <li>• Doktor paneli</li>
+                        <li>• Tam teşhis platformuna dönüşüm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Plans Section -->
+    <section class="fullscreen-section bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Gelecek Planı
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Önümüzdeki geliştirmeler
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Call Center Entegrasyonu</h3>
+                    </div>
+                    <p class="text-gray-600">Admin Paneli ile otomatik lead yönetimi</p>
+                </div>
+
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-teal-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Fotoğraf Kalite Scoring</h3>
+                    </div>
+                    <p class="text-gray-600">Otomatik kalite değerlendirme sistemi</p>
+                </div>
+
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Doktor Yorum Sistemi</h3>
+                    </div>
+                    <p class="text-gray-600">Doktorların fotoğraflara direkt yorum eklemesi</p>
+                </div>
+
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Gelişim Takip Sistemi</h3>
+                    </div>
+                    <p class="text-gray-600">Hastanın 6 ay / 1 yıl gelişim takibi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="fullscreen-section gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+            <div data-aos="fade-up" data-aos-duration="400">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Bu Bir Selfie Uygulaması Değil
+                </h2>
+                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                    Bu, saç ekimi değerlendirme sürecini standartlaştıran tamamen otomatik bir self-capture platformu.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mt-8 text-left max-w-4xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4">Ne Başardık?</h3>
+                        <ul class="space-y-2 text-blue-100">
+                            <li>✓ Telefon sensörlerini, ivmeölçer - gyroskop fiziğini çözen açı motoru</li>
+                            <li>✓ Her cihazda stabil çalışan sistem</li>
+                            <li>✓ Açı hatalarını anlık analiz eden AI destekli doğruluk filtresi</li>
+                            <li>✓ Generative AI ile kullanıcı motivasyonunu artıran deneyim</li>
+                            <li>✓ Lead toplama mekanizmasıyla birleştirilmiş funnel</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4">Sonuç</h3>
+                        <p class="text-blue-100 mb-4">
+                            Kullanıcının kendi telefonundan, kendi evinde, hiç zorlanmadan standart açıyla, doktorun ihtiyacı olan klinik kalitede fotoğrafları çekmesini tamamen otomatik hale getirdik.
+                        </p>
+                        <p class="text-blue-100 font-semibold">
+                            Saç ekimi sektöründe standartları yeniden tanımlayan bir teknoloji.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <p class="text-lg mb-4">
+                    <span class="text-white font-bold">Kuzen's</span> - Smile Hair Clinic Hackathon
+                </p>
+                <p class="text-sm mb-8">
+                    Akıllı Saç Analizi Kamera Sistemi
+                </p>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <h3 class="text-white font-semibold mb-4 text-center">Ekip</h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <p class="text-white font-semibold mb-2">Bora Öksüzoğlu</p>
+                        <p class="text-sm text-gray-500 mb-1">boraoksuzoglu@gmail.com</p>
+                        <p class="text-sm text-gray-500">+90 538 301 6043</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-white font-semibold mb-2">Egemen Umut Demir</p>
+                        <p class="text-sm text-gray-500 mb-1">eudemiir@gmail.com</p>
+                        <p class="text-sm text-gray-500">+90 546 136 6613</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navigation Buttons -->
+    <button id="scrollUp" class="nav-button up hidden" aria-label="Yukarı kaydır">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+    <button id="scrollDown" class="nav-button down" aria-label="Aşağı kaydır">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
