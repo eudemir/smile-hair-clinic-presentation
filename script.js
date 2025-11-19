@@ -5,7 +5,8 @@ function initializeAOS() {
             duration: 400,
             easing: 'ease-out',
             once: true,
-            offset: 20,
+            offset: 10,
+            anchorPlacement: 'top-bottom',
             delay: 0,
             disable: false
         });
@@ -292,6 +293,11 @@ function adjustImageHeights() {
             }
         }
     });
+    
+    // Layout değiştiği için AOS'u güncelle
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 }
 
 // Resize olduğunda image height'ı tekrar ayarla
@@ -324,7 +330,7 @@ function initializeOnLoad() {
     if (typeof AOS !== 'undefined') {
         setTimeout(() => {
             AOS.refresh();
-        }, 100);
+        }, 600);
     }
 }
 
@@ -477,6 +483,9 @@ function initializeHorizontalScroll() {
     window.addEventListener('load', () => {
         setTimeout(() => {
             ScrollTrigger.refresh();
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
         }, 100);
     });
 }
