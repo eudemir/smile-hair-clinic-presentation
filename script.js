@@ -126,10 +126,35 @@ function initializeNavigationButtons() {
     
     // Scroll up button
     scrollUpBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        const sections = document.querySelectorAll('section[id], .fullscreen-section');
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        // Ufak bir tolerans payı bırakıyoruz (örn. 10px) ki tam section başındaysak bir öncekini bulsun
+        const threshold = 10;
+        
+        let prevSection = null;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            // Mevcut scroll pozisyonundan daha yukarıda olan sectionları kontrol et
+            if (sectionTop < currentScroll - threshold) {
+                // Bu sectionlardan en aşağıda olanını (bize en yakın olanı) seç
+                if (!prevSection || sectionTop > prevSection.offsetTop) {
+                    prevSection = section;
+                }
+            }
         });
+        
+        if (prevSection) {
+            window.scrollTo({
+                top: prevSection.offsetTop,
+                behavior: 'smooth'
+            });
+        } else {
+            // Eğer yukarıda section yoksa en başa git
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     });
     
     // Scroll down button
@@ -149,7 +174,7 @@ function initializeNavigationButtons() {
         });
         
         if (nextSection) {
-            const targetPosition = nextSection.offsetTop - 80;
+            const targetPosition = nextSection.offsetTop;
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
