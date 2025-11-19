@@ -163,8 +163,46 @@ function initializeNavigationButtons() {
     });
 }
 
+// Görsellerin gerçek aspect ratio'sunu hesapla ve uygula
+function calculateImageAspectRatios() {
+    const allImages = document.querySelectorAll('.slider-image, .image-wrapper img');
+    
+    allImages.forEach(img => {
+        // Görsel yüklenmemişse yükleme event'i ekle
+        if (!img.complete || img.naturalWidth === 0) {
+            img.addEventListener('load', function() {
+                applyAspectRatio(this);
+            }, { once: true });
+        } else {
+            // Görsel zaten yüklenmişse direkt uygula
+            applyAspectRatio(img);
+        }
+    });
+}
+
+// Görselin aspect ratio'sunu hesapla ve container'a uygula
+function applyAspectRatio(img) {
+    if (img.naturalWidth === 0 || img.naturalHeight === 0) return;
+    
+    const aspectRatio = img.naturalWidth / img.naturalHeight;
+    
+    // Container'ı bul (slider-image için image-container, normal img için image-wrapper)
+    let container = img.closest('.image-container');
+    if (!container) {
+        container = img.closest('.image-wrapper');
+    }
+    
+    if (container) {
+        // Aspect ratio'yu CSS custom property olarak ekle
+        container.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+    }
+}
+
 // Görsel yüksekliğini metin içeriğine (sadece başlık + paragraf) göre ayarla
 function adjustImageHeights() {
+    // Önce görsellerin aspect ratio'larını hesapla
+    calculateImageAspectRatios();
+    
     // Tüm grid container'ları bul
     const grids = document.querySelectorAll('.grid.items-stretch');
     
@@ -202,9 +240,11 @@ function adjustImageHeights() {
                         image = imageWrapper.querySelector('img');
                     }
                     if (image) {
-                        // Aspect ratio'yu koruyarak genişliği hesapla
-                        // 1080x1920 dikey format: genişlik/yükseklik = 1080/1920 = 0.5625
-                        const aspectRatio = 1080 / 1920;
+                        // Gerçek aspect ratio'yu kullan
+                        let aspectRatio = 1080 / 1920; // Varsayılan
+                        if (image.naturalWidth > 0 && image.naturalHeight > 0) {
+                            aspectRatio = image.naturalWidth / image.naturalHeight;
+                        }
                         
                         // Yüksekliği toplam yüksekliğe eşitle
                         const targetHeight = totalHeight;
@@ -230,6 +270,10 @@ function adjustImageHeights() {
                             const container = slider.querySelector('.image-container');
                             if (container) {
                                 container.style.height = finalHeight + 'px';
+                                // Aspect ratio'yu da uygula
+                                if (image.naturalWidth > 0 && image.naturalHeight > 0) {
+                                    container.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+                                }
                             }
                             const allImages = slider.querySelectorAll('.slider-image');
                             allImages.forEach(img => {
@@ -266,8 +310,12 @@ function initializeOnLoad() {
     initializeSmoothScroll();
     initializeNavbar();
     initializeNavigationButtons();
-    // Image height ayarlamayı hemen çalıştır
-    adjustImageHeights();
+    // Görsellerin aspect ratio'larını hesapla (yüklenmelerini bekle)
+    calculateImageAspectRatios();
+    // Image height ayarlamayı görseller yüklendikten sonra çalıştır
+    setTimeout(() => {
+        adjustImageHeights();
+    }, 500);
     // Image slider'ları başlat
     initializeImageSliders();
     // Horizontal scroll'u başlat - biraz gecikme ile (tüm DOM yüklensin)
@@ -305,6 +353,11 @@ function initializeImageSliders() {
                 img.classList.remove('active');
                 if (i === index) {
                     img.classList.add('active');
+                    // Aktif görseli yükle (eğer data-src varsa)
+                    if (img.dataset.src && !img.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
                 }
             });
             
@@ -317,6 +370,19 @@ function initializeImageSliders() {
             });
             
             currentSlide = index;
+            
+            // Aktif görselin aspect ratio'sunu uygula
+            const activeImage = images[index];
+            if (activeImage) {
+                // Görsel yüklendikten sonra aspect ratio uygula
+                if (activeImage.complete && activeImage.naturalWidth > 0) {
+                    applyAspectRatio(activeImage);
+                } else {
+                    activeImage.addEventListener('load', function() {
+                        applyAspectRatio(this);
+                    }, { once: true });
+                }
+            }
         }
         
         // Dot'lara tıklama event'i

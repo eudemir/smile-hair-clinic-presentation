@@ -94,14 +94,10 @@
                 <div data-aos="fade-left" class="image-wrapper">
                     <div class="image-slider" data-slider="problem">
                         <div class="image-container">
-                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Problem+1" alt="Problem 1" class="slider-image active">
-                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Problem+2" alt="Problem 2" class="slider-image">
-                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Problem+3" alt="Problem 3" class="slider-image">
+                            <img src="assets/wrong_view.PNG" alt="Yanlış açı örneği" class="slider-image active" loading="eager">
                         </div>
                         <div class="slider-dots">
                             <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
-                            <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
-                            <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
                         </div>
                     </div>
                 </div>
@@ -125,14 +121,18 @@
                 <div data-aos="fade-right" class="order-2 md:order-1 image-wrapper">
                     <div class="image-slider" data-slider="solution">
                         <div class="image-container">
-                            <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=Solution+1" alt="Solution 1" class="slider-image active">
-                            <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=Solution+2" alt="Solution 2" class="slider-image">
-                            <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=Solution+3" alt="Solution 3" class="slider-image">
+                            <img src="assets/front_view.PNG" alt="Ön yüz tam karşıdan" class="slider-image active" loading="eager">
+                            <img data-src="assets/right_view.PNG" alt="45° sağ profil" class="slider-image" loading="lazy">
+                            <img data-src="assets/left_view.PNG" alt="45° sol profil" class="slider-image" loading="lazy">
+                            <img data-src="assets/top_view.PNG" alt="Tepe (Vertex)" class="slider-image" loading="lazy">
+                            <img data-src="assets/complete_process.PNG" alt="Arka Donör ve tam süreç" class="slider-image" loading="lazy">
                         </div>
                         <div class="slider-dots">
                             <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
                             <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
                             <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                            <button class="slider-dot" data-slide="3" aria-label="Slide 4"></button>
+                            <button class="slider-dot" data-slide="4" aria-label="Slide 5"></button>
                         </div>
                     </div>
                 </div>
@@ -166,6 +166,42 @@
                         <p class="text-2xl font-bold text-blue-600 mb-2">%98</p>
                         <p class="text-gray-700">Doğruluk Oranı</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Usage Video Section -->
+    <section class="fullscreen-section bg-gradient-to-br from-blue-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Uygulama Kullanımı
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Sistemin nasıl çalıştığını canlı olarak görün
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="aspect-video bg-gray-900">
+                        <video 
+                            class="w-full h-full object-contain" 
+                            controls 
+                            poster=""
+                            preload="none"
+                            playsinline
+                        >
+                            <source src="assets/app_usage_video.mp4" type="video/mp4">
+                            Tarayıcınız video oynatmayı desteklemiyor.
+                        </video>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600 text-sm">
+                        Uygulamanın tüm özelliklerini ve kullanıcı deneyimini bu videoda görebilirsiniz
+                    </p>
                 </div>
             </div>
         </div>
@@ -443,14 +479,12 @@
                     <div data-aos="fade-left" class="image-wrapper">
                         <div class="image-slider" data-slider="generative-ai">
                             <div class="image-container">
-                                <img src="https://placehold.co/1080x1920/3b82f6/ffffff?text=Generative+AI+1" alt="Generative AI 1" class="slider-image active">
-                                <img src="https://placehold.co/1080x1920/3b82f6/ffffff?text=Generative+AI+2" alt="Generative AI 2" class="slider-image">
-                                <img src="https://placehold.co/1080x1920/3b82f6/ffffff?text=Generative+AI+3" alt="Generative AI 3" class="slider-image">
+                                <img src="assets/month_one.PNG" alt="1 Ay Sonrası Tahmini" class="slider-image active" loading="eager">
+                                <img data-src="assets/year_one.PNG" alt="1 Yıl Sonrası Tahmini" class="slider-image" loading="lazy">
                             </div>
                             <div class="slider-dots">
                                 <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
                                 <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
-                                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
                             </div>
                         </div>
                     </div>
@@ -462,17 +496,18 @@
         <section class="fullscreen-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="grid md:grid-cols-2 gap-12 items-stretch">
-                    <div data-aos="fade-right" class="order-2 md:order-1 image-wrapper">
-                        <div class="image-slider" data-slider="chatbot">
-                            <div class="image-container">
-                                <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=AI+Chatbot+1" alt="AI Chatbot 1" class="slider-image active">
-                                <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=AI+Chatbot+2" alt="AI Chatbot 2" class="slider-image">
-                                <img src="https://placehold.co/1080x1920/0d9488/ffffff?text=AI+Chatbot+3" alt="AI Chatbot 3" class="slider-image">
-                            </div>
-                            <div class="slider-dots">
-                                <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
-                                <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
-                                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                    <div data-aos="fade-right" class="order-2 md:order-1">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                            <div class="aspect-[9/16] bg-gray-900 max-w-sm mx-auto">
+                                <video 
+                                    class="w-full h-full object-contain" 
+                                    controls 
+                                    preload="none"
+                                    playsinline
+                                >
+                                    <source src="assets/ai_chatbot.mp4" type="video/mp4">
+                                    Tarayıcınız video oynatmayı desteklemiyor.
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -537,14 +572,12 @@
                     <div data-aos="fade-left" class="image-wrapper">
                         <div class="image-slider" data-slider="todo">
                             <div class="image-container">
-                                <img src="https://placehold.co/1080x1920/8b5cf6/ffffff?text=To-Do+List+1" alt="To-Do List 1" class="slider-image active">
-                                <img src="https://placehold.co/1080x1920/8b5cf6/ffffff?text=To-Do+List+2" alt="To-Do List 2" class="slider-image">
-                                <img src="https://placehold.co/1080x1920/8b5cf6/ffffff?text=To-Do+List+3" alt="To-Do List 3" class="slider-image">
+                                <img src="assets/pre_op_list.PNG" alt="Operasyon Öncesi Liste" class="slider-image active" loading="eager">
+                                <img data-src="assets/pre_op_readme.PNG" alt="Operasyon Öncesi Okuma Ekranı" class="slider-image" loading="lazy">
                             </div>
                             <div class="slider-dots">
                                 <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
                                 <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
-                                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
                             </div>
                         </div>
                     </div>
@@ -588,14 +621,16 @@
                 <div data-aos="fade-left" class="image-wrapper">
                     <div class="image-slider" data-slider="global">
                         <div class="image-container">
-                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Global+1" alt="Global 1" class="slider-image active">
-                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Global+2" alt="Global 2" class="slider-image">
-                            <img src="https://placehold.co/1080x1920/1e40af/ffffff?text=Global+3" alt="Global 3" class="slider-image">
+                            <img src="assets/turkish_home_screen.PNG" alt="Türkçe Ana Ekran" class="slider-image active" loading="eager">
+                            <img data-src="assets/english_home_screen.PNG" alt="English Home Screen" class="slider-image" loading="lazy">
+                            <img data-src="assets/arabic_home_screen.PNG" alt="Arabic Home Screen" class="slider-image" loading="lazy">
+                            <img data-src="assets/lang_settings.PNG" alt="Dil Ayarları" class="slider-image" loading="lazy">
                         </div>
                         <div class="slider-dots">
                             <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
                             <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
                             <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                            <button class="slider-dot" data-slide="3" aria-label="Slide 4"></button>
                         </div>
                     </div>
                 </div>

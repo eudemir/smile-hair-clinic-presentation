@@ -108,6 +108,7 @@ footer {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    /* Aspect ratio görselin gerçek boyutuna göre JavaScript ile ayarlanacak */
 }
 
 .slider-image {
