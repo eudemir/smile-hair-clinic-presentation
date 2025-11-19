@@ -87,7 +87,7 @@
                 <div data-aos="fade-left" class="image-wrapper">
                     <div class="image-slider" data-slider="problem">
                         <div class="image-container">
-                            <img src="assets/wrong_view.webp" alt="Yanlış açı örneği" class="slider-image active" loading="eager">
+                            <img src="assets/wrong_view.webp" alt="Yanlış açı örneği" class="slider-image active" >
                         </div>
                         <div class="slider-dots">
                             <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
@@ -114,7 +114,7 @@
                 <div data-aos="fade-right" class="order-2 md:order-1 image-wrapper">
                     <div class="image-slider" data-slider="solution">
                         <div class="image-container">
-                            <img src="assets/front_view.webp" alt="Ön yüz tam karşıdan" class="slider-image active" loading="eager">
+                            <img src="assets/front_view.webp" alt="Ön yüz tam karşıdan" class="slider-image active" >
                             <img data-src="assets/right_view.webp" alt="45° sağ profil" class="slider-image" >
                             <img data-src="assets/left_view.webp" alt="45° sol profil" class="slider-image" >
                             <img data-src="assets/top_view.webp" alt="Tepe (Vertex)" class="slider-image" >
@@ -193,7 +193,7 @@
                 </div>
                 <div class="mt-6 text-center">
                     <p class="text-gray-600 text-sm">
-                        Uygulamanın tüm özelliklerini ve kullanıcı deneyimini bu videoda görebilirsiniz
+                        Kullanıcının 5 kritik açıdan kendi fotoğrafını yardım almadan çektiği videoyu burada bulabilirsiniz.
                     </p>
                 </div>
             </div>
@@ -472,7 +472,7 @@
                     <div data-aos="fade-left" class="image-wrapper">
                         <div class="image-slider" data-slider="generative-ai">
                             <div class="image-container">
-                                <img src="assets/month_one.webp" alt="1 Ay Sonrası Tahmini" class="slider-image active" loading="eager">
+                                <img src="assets/month_one.webp" alt="1 Ay Sonrası Tahmini" class="slider-image active" >
                                 <img data-src="assets/year_one.webp" alt="1 Yıl Sonrası Tahmini" class="slider-image" >
                             </div>
                             <div class="slider-dots">
@@ -509,20 +509,42 @@
                             AI Chatbot
                         </div>
                         <h3 class="text-3xl font-bold text-gray-900 mb-4">
-                            Klinik İçerikleriyle Eğitilmiş
+                            RAG Tabanlı Bilgi Motoru
                         </h3>
                         <p class="text-lg text-gray-600 mb-6">
-                            Tüm Smile Hair Clinic içeriklerini işlemiş özel bir bilgi motoru. Kullanıcı "Saç ekiminden kaç gün sonra duş alabilirim?" diye sorduğunda doğrudan doğru yanıt veriyor.
+                            Smile Hair Clinic'in tüm metinsel içeriğini işleyip bir <strong>RAG (Retrieval-Augmented Generation)</strong> tabanlı bilgi motoru oluşturduk. 
                         </p>
-                        <div class="bg-white p-6 rounded-lg shadow">
-                            <p class="text-gray-700 italic mb-2">"Saç ekimi sonrası banyo yapabilir miyim?"</p>
-                            <div class="flex items-center text-teal-600">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        
+                        <!-- Technical Details -->
+                        <div class="bg-teal-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">Nasıl Çalışıyor?</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-teal-600 mr-2">1.</span>
+                                    <span>Smile Hair Clinic'in internet sitesindeki <strong>blog yazıları, makaleler ve genel bilgiler</strong> markdown dosyalarına dönüştürüldü</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-600 mr-2">2.</span>
+                                    <span>Kullanıcı sorusu geldiğinde yapay zeka <strong>soruyu analiz ederek</strong> en doğru kaynağı buluyor</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-teal-600 mr-2">3.</span>
+                                    <span>İlgili sayfanın içeriğine erişip <strong>otoriter bir cevap</strong> üretiyor</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Example -->
+                        <div class="bg-white p-6 rounded-lg shadow mb-4">
+                            <p class="text-gray-700 italic mb-3">"Saç ekimi sonrası banyo yapabilir miyim?"</p>
+                            <div class="flex items-start text-teal-600 mb-2">
+                                <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                                 </svg>
                                 <span class="font-semibold">Anında Yanıt</span>
                             </div>
+                            <p class="text-sm text-gray-600">AI, en az bir müşteri temsilcisinin vereceği cevap kadar güvenilir yanıtlar üretiyor.</p>
                         </div>
                     </div>
                 </div>
@@ -565,7 +587,7 @@
                     <div data-aos="fade-left" class="image-wrapper">
                         <div class="image-slider" data-slider="todo">
                             <div class="image-container">
-                                <img src="assets/pre_op_list.webp" alt="Operasyon Öncesi Liste" class="slider-image active" loading="eager">
+                                <img src="assets/pre_op_list.webp" alt="Operasyon Öncesi Liste" class="slider-image active" >
                                 <img data-src="assets/pre_op_readme.webp" alt="Operasyon Öncesi Okuma Ekranı" class="slider-image" >
                             </div>
                             <div class="slider-dots">
@@ -614,9 +636,9 @@
                 <div data-aos="fade-left" class="image-wrapper">
                     <div class="image-slider" data-slider="global">
                         <div class="image-container">
-                            <img src="assets/turkish_home_screen.webp" alt="Türkçe Ana Ekran" class="slider-image active" loading="eager">
+							<img data-src="assets/arabic_home_screen.webp" alt="Arabic Home Screen" class="slider-image" >
+                            <img src="assets/turkish_home_screen.webp" alt="Türkçe Ana Ekran" class="slider-image active" >
                             <img data-src="assets/english_home_screen.webp" alt="English Home Screen" class="slider-image" >
-                            <img data-src="assets/arabic_home_screen.webp" alt="Arabic Home Screen" class="slider-image" >
                             <img data-src="assets/lang_settings.webp" alt="Dil Ayarları" class="slider-image" >
                         </div>
                         <div class="slider-dots">
@@ -983,6 +1005,129 @@
         </div>
     </section>
 
+		<!-- Technical Architecture Section -->
+    <section class="fullscreen-section bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Projenin Teknik Mimarisi
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Modern teknolojilerle inşa edilmiş, ölçeklenebilir ve güvenilir bir platform
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Mobile App -->
+                <div data-aos="fade-right" class="bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold">Mobil Uygulama</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">React Native & Expo</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>React Native + Expo</strong> ile geliştirildi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>expo-sensors</strong> ile açı ölçümü (accelerometer + gyroscope)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>react-native-reanimated</strong> ile canlı açı animasyonları</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>expo-av + expo-speech + expo-haptics</strong> → Sesli komut + titreşim + geri bildirim</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>react-native-vision-camera</strong> → Yüksek kaliteli otomatik fotoğraf çekimi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>i18n-js + expo-localization</strong> → 20 dil desteği</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span><strong>axios + react-query</strong> → API & veri yönetimi</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Backend -->
+                <div data-aos="fade-left" class="bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold">Backend</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Node.js + Express</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span><strong>Node.js + Express</strong> REST API</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span><strong>MongoDB + Mongoose</strong> veri yapısı</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span><strong>Multer + Sharp</strong> → Fotoğraf upload & optimize</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span><strong>fal-ai</strong> → Fotoğraf doğrulama + generative AI tahminleri</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span><strong>OpenAI GPT-4o</strong> → Klinik bilgisiyle çalışan chatbot</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span><strong>Socket.io</strong> → Gerçek zamanlı çalışan chatbot</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GitHub Links -->
+            <div data-aos="fade-up" class="text-center">
+                <h3 class="text-2xl font-bold mb-6">Kaynak Kodlar</h3>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://github.com/boraoksuzoglu/smile-hair-clinic-app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition group">
+                        <svg class="w-6 h-6 mr-3 group-hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="text-left">
+                            <div class="text-sm text-gray-400">Mobile App</div>
+                            <div class="font-semibold">smile-hair-clinic-app</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/boraoksuzoglu/smile-hair-clinic-backend" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition group">
+                        <svg class="w-6 h-6 mr-3 group-hover:scale-110 transition" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="text-left">
+                            <div class="text-sm text-gray-400">Backend API</div>
+                            <div class="font-semibold">smile-hair-clinic-backend</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Future Plans Section -->
     <section class="fullscreen-section bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -1038,6 +1183,9 @@
             </div>
         </div>
     </section>
+
+
+
 
     <!-- Conclusion Section -->
     <section class="fullscreen-section gradient-bg text-white">
